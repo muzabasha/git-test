@@ -26,11 +26,11 @@
 	color: #0f0f0f;
 }
 
-.body{
+body{
 	padding: 50px 0px 0px;
 	z-index:0;
 } 
 
 .navbar-dark{
-	nackgrounf-color: #512DA8;
+	background-color: #512DA8;
 }
