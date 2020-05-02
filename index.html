@@ -72,7 +72,40 @@
         </div>
     </div>
     <header class="jumbotron">
-        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h3>Dr. Syed Muzamil Basha</h3><br/>
+					<h5>Associate professor<br/> 
+					Department of Information Technology<br/> 
+					Sri Krishna College of Enginnering and Technology<br/>
+					Kuniyamuthur, Coimbatore - 641008 <br/>
+					Official Email-ID: muzamilbashas@skcet.ac.in<br/>
+					Mobile: 8331977568<br/></h5>
+                </div>
+                <div class="col-12 col-sm align-self-center">
+					<img src="img/a1.png" class="img-fluid" height=150 width=150>
+                </div>
+				<div>
+				<a role="button" class="btn btn-block nav-link btn-warning"
+                        data-toggle="tooltip" data-html="true"  title="<strong>+91-8331977568</strong> <br> Or <br> Mail to me  <br><strong>muza.basha@gmail.com</strong>"
+                        data-placement="bottom" href="#reserveform">Contact me:</a>
+				</div>
+            </div>
+    </header>
+
+    <div class="container">
+		 <div class="col-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote">
+						<footer class="blockquote-footer">
+                            <cite title="Source Title">Objective</cite>
+                        </footer>
+                        <p class="mb-0">Seeking a career of dedication that helps me to improve myself in every aspect and that which also helps my organization in a progressive way</p>
+                    </blockquote>
+                </div>
+        </div>
+	</div>
+		<div class="container">
 			<div class="row row-content">
 				<div class="col">
 					<div id="mycarousel" class="carousel slide" data-ride="carousel">
@@ -121,51 +154,13 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-					<div class="btn-group" id="">
-						<button class="btn btn-danger btn-sm" id="carousel-pause">
-							<span class="fa fa-pause"></span>
-						</button>
-						<button class="btn btn-danger btn-sm" id="carousel-play">
-							<span class="fa fa-play"></span>
-						</button>
-					</div>
+						<button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span id="carousel-button-icon" class="fa fa-pause"></span>
+                    </button>
 				</div>	
 				</div>			
 			</div>
 		</div>
-            <div class="row row-header">
-                <div class="col-12 col-sm-6">
-                    <h3>Dr. Syed Muzamil Basha</h3><br/>
-					<h5>Associate professor<br/> 
-					Department of Information Technology<br/> 
-					Sri Krishna College of Enginnering and Technology<br/>
-					Kuniyamuthur, Coimbatore - 641008 <br/>
-					Official Email-ID: muzamilbashas@skcet.ac.in<br/>
-					Mobile: 8331977568<br/></h5>
-                </div>
-                <div class="col-12 col-sm align-self-center">
-					<img src="img/a1.png" class="img-fluid" height=150 width=150>
-                </div>
-				<div>
-				<a role="button" class="btn btn-block nav-link btn-warning"
-                        data-toggle="tooltip" data-html="true"  title="<strong>+91-8331977568</strong> <br> Or <br> Mail to me  <br><strong>muza.basha@gmail.com</strong>"
-                        data-placement="bottom" href="#reserveform">Contact me:</a>
-				</div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-		 <div class="col-12">
-                <div class="card card-body bg-light">
-                    <blockquote class="blockquote">
-						<footer class="blockquote-footer">
-                            <cite title="Source Title">Objective</cite>
-                        </footer>
-                        <p class="mb-0">Seeking a career of dedication that helps me to improve myself in every aspect and that which also helps my organization in a progressive way</p>
-                    </blockquote>
-                </div>
-            </div>
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 col-md-3">
 				<h5>Biblography<span class="badge badge-danger">Ph.D.</span> <span class="badge badge-pill badge-secondary">2020</span></h5>
@@ -291,11 +286,17 @@
         });
 		 $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
-            $("#carousel-pause").click(function(){
-                $("#mycarousel").carousel('pause');
-            });
-            $("#carousel-play").click(function(){
-                $("#mycarousel").carousel('cycle');
+             $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass('fa-pause');
+                    $("#carouselButton").children("span").addClass('fa-play');
+                }
+                else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass('fa-play');
+                    $("#carouselButton").children("span").addClass('fa-pause');                    
+                }
             });
         });
 		
